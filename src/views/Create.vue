@@ -2,11 +2,23 @@
   <div class="create">
     <h1>Create new post page</h1>
     <form>
-      <input type="text" v-model="post.description" placeholder="Type a description here" required>
-      <input type="file" ref="fileInput" accept="image/*" v-on:change="previewImage">
-      <button class="choose-image" type="button" v-on:click="triggerChooseImg">Choose Image</button>
+      <input
+        type="text"
+        v-model="post.description"
+        placeholder="Type a description here"
+        required
+      />
+      <input
+        type="file"
+        ref="fileInput"
+        accept="image/*"
+        v-on:change="previewImage"
+      />
+      <button class="choose-image" type="button" v-on:click="triggerChooseImg">
+        Choose Image
+      </button>
       <div>
-        <img :src="post.image" class="image-preview">
+        <img :src="post.image" class="image-preview" />
       </div>
       <button type="button" v-on:click="createPost">Create post</button>
     </form>
@@ -14,7 +26,9 @@
 </template>
 
 <script>
-import { postRef } from "../firebase-db";
+import { postRef } from '../firebase-db';
+console.log(postRef);
+
 export default {
   name: "Create",
   data() {
@@ -23,7 +37,7 @@ export default {
         description: "",
         image: null
       }
-    }
+    };
   },
   methods: {
     triggerChooseImg() {
@@ -32,7 +46,7 @@ export default {
     previewImage() {
       const imageFile = this.$refs.fileInput.files[0];
       const fileReader = new FileReader();
-      fileReader.onload = (event) => {
+      fileReader.onload = event => {
         this.post.image = event.target.result;
       };
       fileReader.readAsDataURL(imageFile);
@@ -44,8 +58,6 @@ export default {
   }
 };
 </script>
-
-
 
 <style scoped>
 form {
