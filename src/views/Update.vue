@@ -71,6 +71,12 @@ form {
   padding: 0em 1em 2.5em;
 }
 
+button {
+    font-family: futura-pt;
+  font-weight: 500;
+  text-transform: lowercase;
+}
+
 button.choose-image {
   background-color: #428CD4;
   border-radius: 30px;
@@ -92,6 +98,8 @@ input {
   display: block;
   outline: none;
   border: 3px solid #ccc;
+    font-size: 1em;
+  font-family: futura-pt;
 }
 
 input:focus{

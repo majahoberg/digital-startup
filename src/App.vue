@@ -17,7 +17,7 @@
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: futura-pt, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -52,7 +52,11 @@ button {
     border-radius: 30px;
   width: 100%;
   max-width: 350px;
+  font-family: futura-pt;
+  font-weight: 500;
+  text-transform: lowercase;
 }
+
 
 #button-delete {
   background-color: var(--secondary);
