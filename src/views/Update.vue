@@ -103,7 +103,6 @@ input[type="file"] {
 }
 
 .image-preview {
-  border-radius: 10%;
   max-width: 350px;
   width: 100%;
   padding: 1em 0;
