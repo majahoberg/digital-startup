@@ -11,4 +11,4 @@ export const db = firebase.initializeApp ({
     appId: "1:393493758902:web:0eca16db5418fd89b83717"
 }).firestore();
 
-export const postRef = db.collection('posts');
+export const postRef = db.collection("posts");

@@ -9,12 +9,19 @@
 </template>
 
 <style>
+:root {
+  --primary: #2c3e50;
+  --secondary: #42b983;
+  --text-color-light: #f1f1f1;
+  --text-color-dark: #333;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: var(--primary);
 }
 
 #nav {
@@ -23,10 +30,23 @@
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: var(--primary);
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: var(--secondary);
+}
+
+button {
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  padding: 12px 15px;
+  font-size: 1em;
+  border-radius: 0;
+  color: var(--text-color-light);
+  background-color: var(--secondary);
+  width: 100%;
+  max-width: 350px;
 }
 </style>

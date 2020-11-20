@@ -20,7 +20,7 @@ export default {
         };
     },
     methods:{
-        deltePost(id){
+        deltePost(id) {
             postRef.doc(id).delete();
         }
     },

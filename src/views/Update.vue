@@ -1,42 +1,37 @@
 <template>
-  <div class="create">
-    <h1>Create new post page</h1>
-    <form>
-      <input
-        type="text"
-        v-model="post.description"
-        placeholder="Type a description here"
-        required
-      />
-      <input
-        type="file"
-        ref="fileInput"
-        accept="image/*"
-        v-on:change="previewImage"
-      />
-      <button class="choose-image" type="button" v-on:click="triggerChooseImg">
+    <div class="update">
+        <h1>Update</h1>
+        <form action="">
+            <input 
+            type="text" 
+            v-model="post.description"
+            placeholder="Type description"
+            required
+           />
+           <input 
+           type="file"
+           ref="fileInput"
+           accept="image/*"
+           v-on:change="previewImage"
+           />
+           <button class="choose-image" type="button" v-on:click="triggerChooseImg">
         Choose Image
       </button>
       <div>
         <img :src="post.image" class="image-preview" />
       </div>
-      <button type="button" v-on:click="createPost">Create post</button>
+      <button type="button" v-on:click="updatePost">Update post</button>
     </form>
   </div>
 </template>
 
-<script>
-import { postRef } from '../firebase-db';
 
+<script>
+import { postRef } from "../firebase-db";
 export default {
-  name: "Create",
-  data() {
-    return {
-      post: {
-        description: "",
-        image: null
-      }
-    };
+  name: "Update",
+  props: {
+    post: Object
   },
   methods: {
     triggerChooseImg() {
@@ -50,8 +45,14 @@ export default {
       };
       fileReader.readAsDataURL(imageFile);
     },
-    createPost() {
-      postRef.add(this.post);
+    updatePost() {
+      console.log(this.post);
+
+      postRef.doc(this.post.id).set({
+        description: this.post.description,
+        image: this.post.image
+      });
+
       this.$router.push("/");
     }
   }
