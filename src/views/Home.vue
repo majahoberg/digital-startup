@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Vue Fire Post App</h1>
+    <h1>My posts</h1>
     <post-list></post-list>
   </div>
 </template>

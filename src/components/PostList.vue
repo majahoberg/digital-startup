@@ -2,11 +2,12 @@
   <div class="grid-container">
     <article v-for="post in posts" :key="post.id">
       <img :src="post.image" />
+      <h1>{{ post.title }}</h1>
       <h3>{{ post.description }}</h3>
       <router-link :to="{ name: 'Update', params: { post: post } }">
         <button>Update</button>
       </router-link>
-      <button type="button" v-on:click="deletePost(post.id)">Delete</button>
+      <button id="button-delete" type="button" v-on:click="deletePost(post.id)">Delete</button>
     </article>
   </div>
 </template>
@@ -14,7 +15,7 @@
 <script>
 import { postRef } from "../firebase-db";
 export default {
-    data () {
+    data() {
         return {
             posts: []
         };
@@ -33,6 +34,8 @@ export default {
 
 
 <style scoped>
+
+
 /* ---------- Grid container ---------- */
 .grid-container {
   display: grid;

@@ -10,10 +10,10 @@
 
 <style>
 :root {
-  --primary: #2c3e50;
-  --secondary: #42b983;
-  --text-color-light: #f1f1f1;
-  --text-color-dark: #333;
+  --primary: #428cd4;
+  --secondary: #004e9a;
+  --text-color-light: #f3f3f3;
+  --text-color-dark: #041b2d;
 }
 
 #app {
@@ -21,7 +21,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: var(--primary);
+  color: var(--text-color-dark);
 }
 
 #nav {
@@ -41,12 +41,20 @@ button {
   text-align: center;
   cursor: pointer;
   border: none;
+  margin-bottom: 3%;
   padding: 12px 15px;
   font-size: 1em;
   border-radius: 0;
   color: var(--text-color-light);
-  background-color: var(--secondary);
+  background-color: var(--primary);
+    border-radius: 30px;
   width: 100%;
   max-width: 350px;
 }
+
+#button-delete {
+  background-color: var(--secondary);
+}
+
+
 </style>

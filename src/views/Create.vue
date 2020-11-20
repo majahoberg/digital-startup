@@ -1,7 +1,13 @@
 <template>
   <div class="create">
-    <h1>Create new post page</h1>
+    <h1>Create a post</h1>
     <form>
+      <input
+        type="text"
+        v-model="post.title"
+        placeholder="Type a title here"
+        required
+      />
       <input
         type="text"
         v-model="post.description"
@@ -15,24 +21,25 @@
         v-on:change="previewImage"
       />
       <button class="choose-image" type="button" v-on:click="triggerChooseImg">
-        Choose Image
+        Upload Image
       </button>
       <div>
         <img :src="post.image" class="image-preview" />
       </div>
-      <button type="button" v-on:click="createPost">Create post</button>
+      <button id="create-post" type="button" v-on:click="createPost">Create post</button>
     </form>
   </div>
 </template>
 
 <script>
-import { postRef } from '../firebase-db';
+import { postRef } from "../firebase-db";
 
 export default {
   name: "Create",
   data() {
     return {
       post: {
+        title: "",
         description: "",
         image: null
       }
@@ -59,24 +66,22 @@ export default {
 </script>
 
 <style scoped>
+
 form {
-  padding: 2em 1em 2.5em;
+  padding: 0em 1em 2.5em;
 }
 
 button.choose-image {
-  background-color: var(--primary);
+  background-color: #428CD4;
+  border-radius: 30px;
 }
 
-/* article button {
-  text-align: center;
-  cursor: pointer;
-  border: none;
-  padding: 10px 8px;
-  border-radius: 0;
-  color: var(--text-color-light);
-  background-color: var(--green);
-  width: 40%;
-} */
+button#create-post {
+    margin-top: 1%;
+    background-color: #004e9a;
+  border-radius: 30px;
+  margin-bottom: 5%;
+}
 
 input {
   margin: 1em auto;
@@ -85,6 +90,12 @@ input {
   padding: 12px 15px;
   box-sizing: border-box;
   display: block;
+  outline: none;
+  border: 3px solid #ccc;
+}
+
+input:focus{
+border-color: #428cd4
 }
 
 input[type="file"] {
