@@ -21,9 +21,9 @@ export default {
         };
     },
     methods:{
-        deltePost(id) {
-            postRef.doc(id).delete();
-        }
+      deletePost(id){
+          postRef.doc(id).delete();
+      }
     },
     firestore: {
         posts: postRef

@@ -1,6 +1,6 @@
 <template>
   <div class="create">
-    <h1>Create a post</h1>
+    <h1>create a post</h1>
     <form>
       <input
         type="text"
